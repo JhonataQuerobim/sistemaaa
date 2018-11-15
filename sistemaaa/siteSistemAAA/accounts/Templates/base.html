@@ -1,0 +1,76 @@
+{% load static %}
+
+<html>
+    <head>
+       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        {% block head %}
+        <title>Base</title>
+        {% endblock %}
+    </head>
+    <body>
+        <div class="jumbotron">
+          <h1>SistemAAA</h1>
+          <p>Sistema WEB para gerenciamento de Atléticas</p>
+          <p><a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">Fazer login</a></p>
+        </div>
+        {% block body %}
+
+        {% endblock %}
+        <div class="container scroll-buffer">
+            <section>
+                <div class="page-header">
+                    <div class="col-md-2 pull-right">
+                        <h4><a href="{% url 'register' %}" class="top-menu"><span class="glyphicon glyphicon-plus">Adicionar</span></a></h4>
+                    </div>
+                    <h3>Home
+                    <br>
+                        <small>
+                            Para inserir novos clientes clique no ícone "adicionar"
+                        </small>
+                    </h3>
+                </div>
+            </section>
+        </div>
+        <div class="container scroll-buffer">
+            <section>
+                <div class="page-header">
+                    <h2>Pagina web - Sistema para Atleticas</h2>
+                </div>
+                <div class="col-md-4">
+                    <h4>Requisitos cumpridos</h4><br>
+                    - Login<br>
+                    - Gerenciamento de Clientes<br>
+                    - Sistema Responsivo
+                </div>
+                <div class="col-md-4">
+                    <h4>Requisitos iniciados</h4><br>
+                    - Estética agradavel<br>
+                    - Funcionalidades exclusivas
+                </div>
+                <div class="col-md-4">
+                    <h4>Requisitos não contemplados</h4><br>
+                    - Envio de emails<br>
+                    - Geração de PDFs<br>
+                    - Exportacao/importacao de tabelas
+                </div>
+            </section>
+        </div>
+        <br>
+        <br>
+
+        <footer>
+            <hr>
+            <center>
+                <h1>
+                    <small>
+                        Sao Carlos SP - 2018
+                    </small>
+                </h1>
+                <h3>Desenvolvido por: Jhonata Querobim</h3>
+            </center>
+        </footer>
+    </body>
+</html>

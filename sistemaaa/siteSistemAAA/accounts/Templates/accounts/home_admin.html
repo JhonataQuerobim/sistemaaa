@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>HomeAdmin</title>
+{%  endblock %}
+
+{% block body %}
+    <div class="container scroll-buffer">
+    <div class="row">
+        <span class="label label-danger">Administrador</span>
+    </div>
+        <br>
+    <div class="row">
+        <a href="{% url 'home' %}" class="top-menu"><span class="glyphicon glyphicon-remove"> Deslogar</span></a>
+    </div>
+    </div>
+<div class="container scroll-buffer">
+    <section>
+        <div class="page-header">
+            <h3>
+                Administrador <br>
+                <small>
+                    Permissao para acessar lista de clientes cadastrados
+                </small>
+            </h3>
+        </div>
+        <div class="col-md-12">
+            <h4><a href="{% url 'client_list' %}" class="top-menu"><span class="glyphicon glyphicon-th-list"> Clientes</span></a></h4>
+        </div>
+    </section>
+</div>
+    <br>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% load static %}
+
+<html>
+    <head>
+       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        {% block head %}
+        <title>Base</title>
+        {% endblock %}
+    </head>
+    <body>
+    <br>
+    <div class="container scroll-buffer">
+        <div class="col-md-1">
+            <a href="{% url 'home_admin' %}" class="top-menu"><span class="glyphicon glyphicon-menu-left">Voltar</span></a>
+        </div>
+    </div>
+    <div class="container scroll-buffer">
+            <section>
+                <div class="page-header">
+                    <div class="col-md-2 pull-right">
+                        <br>
+                        <h4><a href="{% url 'register' %}" class="top-menu"><span class="glyphicon glyphicon-plus">Adicionar</span></a></h4>
+                    </div>
+                    <h3>Listagem de Clientes Cadastrados
+                    <br>
+                        <br>
+                        <small>
+                            Para inserir novos clientes clique no ícone "adicionar"
+                        </small>
+                    </h3>
+                </div>
+            </section>
+        </div>
+        <br>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col-md-1">#</th>
+                        <th scope="col-md-3">Nome</th>
+                        <th scope="col-md-2">Email</th>
+                        <th scope="col-md-3">Endereco</th>
+                        <th scope="col-md-1">Telefone</th>
+                        <th scope="col-md-1">Editar</th>
+                        <th scope="col-md-1">Apagar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for client in clients %}
+                    <tr>
+                        <th scope="row">{{ client.pk }}</th>
+                        <td>{{ client.nome }}</td>
+                        <td>{{ client.email }}</td>
+                        <td>{{ client.endereco }}</td>
+                        <td>{{ client.telefone }}</td>
+                        <td><a class="btn btn-default" href="{% url 'edit' pk=client.pk %}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                        <td><a class="btn btn-default" href="{% url 'delete' pk=client.pk %}"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

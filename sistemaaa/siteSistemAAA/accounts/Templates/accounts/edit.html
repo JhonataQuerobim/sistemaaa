@@ -1,0 +1,9 @@
+{% extends 'baseForm.html' %}
+
+{% block body %}
+    <h2>Editar</h2>
+    <form method="POST" class="client-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}
